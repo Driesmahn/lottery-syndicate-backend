@@ -3,9 +3,14 @@ const app = express();
 
 app.use(express.json());
 
-// Health check endpoint
+// ✅ Health check endpoint
 app.get("/api/health", (req, res) => {
-  res.json({ status: "ok" });
+  res.json({ status: "ok", message: "Backend is running!" });
+});
+
+// ✅ Example route
+app.get("/api/hello", (req, res) => {
+  res.json({ message: "Hello from the Lottery Syndicate backend!" });
 });
 
 // Start server
